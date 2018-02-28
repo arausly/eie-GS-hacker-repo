@@ -115,6 +115,27 @@ function printAverage(arr){
 // GS EVENTS lagos second practice question
 // a palindrome 
 
+function detectThreat(tweets){
+  if(arr.length === 0) console.log('n/a');
+  for(let i=0; i<tweets.length; i++){
+       let tweet = tweets[i];
+       let tweetMsg = tweet.substring(0, tweet.length-3);
+       let tweetSymbol = tweet.substring(tweet.length-3);
+     
+  } 
+
+  // determines which is a valid palindrome.
+const isPalindrome = (str) =>{
+ return (str === str.split('').reverse().join('')) ? true : false;
+}
+
+// all the palindromes in the tweetMsg | random strings
+const findPalindrome = () =>{
+      let palindromes = [];
+      let allPalindromes = [];
+      
+  }
+}
 
 // time conversion #8
 // convert a 12 hour clock to a 24 hour clock
@@ -168,4 +189,31 @@ function plusMinus(arr){
     let m = arr.length;
     let output = [((((arr.filter(n=> n>0)).length))/m)].concat([((arr.filter(n=> n<0)).length)/m]).concat(([((arr.filter(n=> n===0)).length)/m])).map(n=>n.toFixed(6));
     console.log(output.join('\n'));
+}
+
+// not all test cases pass 7/11 it's a good score tho
+// this is what i have for now
+// https://www.hackerrank.com/challenges/append-and-delete/problem
+function appendAndDelete(s,t,k){
+    if(s === "" || t === '' || s === '' && t === '') return '';
+    let similarity = [];
+    let disparity = [];
+    let newAddition = [];
+    let i = -1;
+    do{
+       i++;
+       if((s[i] === t[i]) && disparity.length === 0){
+         similarity.push(s[i]);
+       }else{
+          disparity.push(s[i]);
+            if(t[i]){
+                newAddition.push(t[i]);
+            }
+       }
+    }while(i <= s.length);
+    if((disparity.length + newAddition.length) <= k){
+       return 'Yes';    
+    }else{
+       return 'No';
+    }
 }
