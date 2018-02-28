@@ -1,5 +1,7 @@
 // Javascript --> solutions
 // feel free to improve.
+// Disclaimer: These are not the questions coming out. If they do, please try not to copy-paste, as that might end up really messed up. 
+// wish you all success.
 
 // /hacker rank series/#1
 // [[daniel,80],[femi,78],[joy,79],[ojo,98]]
@@ -217,6 +219,7 @@ function appendAndDelete(s,t,k){
        return 'No';
     }
 }
+<<<<<<< HEAD
 
 // aelaeyi gidi gan
 //BRB
@@ -262,3 +265,5 @@ function makingAnagrams(a,b){
     return ((a.length - aNB.length) + (b.length - aNB.length));
 }
 
+=======
+>>>>>>> 5a029d783ca80914601b14696804d7b03cfbfb25
