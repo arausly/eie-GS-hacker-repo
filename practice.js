@@ -44,7 +44,7 @@ function sortLetters(str){
 
 
 // arrays that are unique #4
-// i used es6 cheat 
+// i used es6 cheat aka boss version 😎😎
 
 function uniqueArr(arr){
      return [...new Set(arr)];
@@ -191,7 +191,7 @@ function plusMinus(arr){
     console.log(output.join('\n'));
 }
 
-// not all test cases pass 7/11 it's a good score tho
+// not all test cases pass 7/11😥😥 it's a good score tho
 // this is what i have for now
 // https://www.hackerrank.com/challenges/append-and-delete/problem
 function appendAndDelete(s,t,k){
@@ -217,3 +217,48 @@ function appendAndDelete(s,t,k){
        return 'No';
     }
 }
+
+// aelaeyi gidi gan
+//BRB
+// // 2D arrays
+// // sample input
+// let a = [
+//     [ 1, 1, 1, 0, 0, 0 ],
+//     [ 0, 1, 0, 0, 0, 0 ],
+//     [ 1, 1, 1, 0, 0, 0 ],
+//     [ 0, 0, 2, 4, 4, 0 ],
+//     [ 0, 0, 0, 2, 0, 0 ],
+//     [ 0, 0, 1, 2, 4, 0 ]
+// ]
+// // sample output 19
+// //https://www.hackerrank.com/challenges/30-2d-arrays/problem
+
+// function hourGlassSum(arr){
+//      let newArr = []; 
+//     for(let i=0; i<arr.length; i++){
+//         for(let j=0; j<(arr.length -2); j++){
+//                newArr[i].push([arr[i][j],arr[i][j+1], arr[i][j+2]]);
+//         }
+//     }
+//     console.log(newArr);
+// }
+
+// cracking the coding interview 
+// #1
+//https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
+
+function arrayLeftRotation(a){
+   for(let i=1; i<=k; i++)a.push(a.shift());
+   return a.join('');
+}
+//smarter version pls 🛐🛐--- to much for-loop joor. 😓😓
+
+
+// #2
+// anagram refers to words consisting of the same length of char, just rearranged.
+// yea no for loop 🎆🎆🎆, but still not all test cases, working on it though but slick 👌👌
+function makingAnagrams(a,b){
+   let aNB = a.split('').filter(aN=>b.indexOf(aN) > -1); // i have found my c;
+    return ((a.length - aNB.length) + (b.length - aNB.length));
+}
+
