@@ -268,18 +268,38 @@ function makingAnagrams(a,b){
 
 //https://www.hackerrank.com/challenges/ctci-lonely-integer/problem
 //with the rationale of the one above this should be a walk in the park 🚶🚶🚶🚶
+
 function lonelyInteger(arr){
     let freq = {};
-    for(let i=0; i<a.length; i++){
-          if( a[i] in freq){
-              freq[a[i]] =  freq[a[i]] + 1
-          }else{ 
-               freq[a[i]] = 1
-          }
-    } 
-   for(key in freq){
-        if(freq[key] === 1){
-            console.log(key)
-        }
-   }
+    arr.forEach(a[i] in freq )? freq[a[i]] =  freq[a[i]] + 1 :freq[a[i]] = 1
+    for(key in freq) if(freq[key] === 1) console.log(key);
+}
+
+// forgive me guys ... i'm just hooked ⚓️⚓️ on this thing
+//https://www.hackerrank.com/challenges/ctci-ransom-note/problem
+
+function ransomNote(ransom, magazine){
+   if((ransom === '' && magazine === '') || ransom === '' || magazine === '') return;
+   let freq = {}, output=[]; 
+   magazine.split(' ').forEach(word => freq[char] = (freq[char] || 0) + 1);
+   ransom.split(' ').forEach(word => freq[char] = (freq[char] || 0 ) -1);
+   for(key in freq) (freq[key] <= -1)? 'No' :  'Yes';
+   // push to output then do the below
+//    output.indexOf('No') > -1 ? console.log('No') : console.log('Yes');
+}
+
+// for the GS test, this should be absolutely irrelevant. but for knowledge sake why not.
+//https://www.hackerrank.com/challenges/30-inheritance/problem
+class Student extends Person {
+    constructor(firstName, lastName, id, testScores){
+       super(firstName, lastName, id, testScores);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+        this.testScores = testScores;
+    }
+    calculate(){
+       let ave = this.testScores.reduce((sum,n)=>sum+n)/this.testScores.length;
+      return (ave >= 90) ? 'O' : (ave < 90 && ave >=80) ? 'E' : (ave <80 && ave>=70) ? 'A' : (ave <70 && ave>=55)  ? 'P' : (ave <55 &&  ave>=40) ? 'D' : 'T'
+    }
 }
