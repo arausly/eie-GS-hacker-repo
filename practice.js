@@ -219,7 +219,6 @@ function appendAndDelete(s,t,k){
        return 'No';
     }
 }
-<<<<<<< HEAD
 
 // aelaeyi gidi gan
 //BRB
@@ -259,11 +258,28 @@ function arrayLeftRotation(a){
 
 // #2
 // anagram refers to words consisting of the same length of char, just rearranged.
-// yea no for loop 🎆🎆🎆, but still not all test cases, working on it though but slick 👌👌
+// solved ✔️✔️✔️
 function makingAnagrams(a,b){
-   let aNB = a.split('').filter(aN=>b.indexOf(aN) > -1); // i have found my c;
-    return ((a.length - aNB.length) + (b.length - aNB.length));
+    let freq = {};
+    a.split('').forEach(char=> freq[char] = (freq[char] || 0) + 1);
+    b.split('').forEach(char=> freq[char] = (freq[char] || 0) -1);
+    return Object.keys(freq).reduce((sum, key) => sum + Math.abs(freq[key]),0)
 }
 
-=======
->>>>>>> 5a029d783ca80914601b14696804d7b03cfbfb25
+//https://www.hackerrank.com/challenges/ctci-lonely-integer/problem
+//with the rationale of the one above this should be a walk in the park 🚶🚶🚶🚶
+function lonelyInteger(arr){
+    let freq = {};
+    for(let i=0; i<a.length; i++){
+          if( a[i] in freq){
+              freq[a[i]] =  freq[a[i]] + 1
+          }else{ 
+               freq[a[i]] = 1
+          }
+    } 
+   for(key in freq){
+        if(freq[key] === 1){
+            console.log(key)
+        }
+   }
+}
