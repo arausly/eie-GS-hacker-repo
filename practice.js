@@ -2,6 +2,7 @@
 // feel free to improve.
 // Disclaimer: These are not the questions coming out. If they do, please try not to copy-paste, as that might end up really messed up. 
 // wish you all success.
+// for more clarity @arausidany
 
 // /hacker rank series/#1
 // [[daniel,80],[femi,78],[joy,79],[ojo,98]]
