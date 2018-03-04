@@ -253,11 +253,12 @@ function arrayLeftRotation(a){
    for(let i=1; i<=k; i++)a.push(a.shift());
    return a.join('');
 }
-//smarter version pls 🛐🛐--- to much for-loop joor. 😓😓
+//smarter version pls 🙏🙏🙏--- to much for-loop joor. 😫😫😫
 
 
 // #2
 // anagram refers to words consisting of the same length of char, just rearranged.
+// this is to decrypt to strings to get anagrams
 // solved ✔️✔️✔️
 function makingAnagrams(a,b){
     let freq = {};
@@ -271,7 +272,7 @@ function makingAnagrams(a,b){
 
 function lonelyInteger(arr){
     let freq = {};
-    arr.forEach(a[i] in freq )? freq[a[i]] =  freq[a[i]] + 1 :freq[a[i]] = 1
+    arr.forEach(a[i] in freq )? freq[a[i]] =  freq[a[i]] + 1 :freq[a[i]] = 1;
     for(key in freq) if(freq[key] === 1) console.log(key);
 }
 
@@ -302,4 +303,85 @@ class Student extends Person {
        let ave = this.testScores.reduce((sum,n)=>sum+n)/this.testScores.length;
       return (ave >= 90) ? 'O' : (ave < 90 && ave >=80) ? 'E' : (ave <80 && ave>=70) ? 'A' : (ave <70 && ave>=55)  ? 'P' : (ave <55 &&  ave>=40) ? 'D' : 'T'
     }
+}
+
+
+// staircase
+// palindrome
+// panagram
+// minMax
+//
+
+// inputString - araara 
+// substringLength -2
+function uniqueSubstring(inputString, substringLength){
+    let uniqueStr = [];
+    for(let i=0; i<=(inputString-substringLength); i++){
+         uniqueStr.push([inputString.substring(i,(i+substringLength))]);
+    }
+    return uniqueStr.sort((a,b)=>a.charCodeAt(0)-b.charCodeAt(0));
+}
+
+// stop 🛑🛑, please read carefully
+// https://www.hackerrank.com/challenges/repeated-string/problem
+// this is a very terrible example, works with small nums. It is way slower 🐜🐜
+// and will eventually break for very large nums
+// possibly get an error like javascript heap out of memory 
+function repeatedString(s,n){
+    let strArr = s.split('');
+    let m = -1; 
+    do{
+       m++
+       if(m > (s.length-1))m = 0;
+        strArr.push(s[m]);
+   }while(strArr.length<=n);
+ return strArr.join('').match(/[a]/g).length;
+}
+
+// solve it this way like a boss 😎😎😎
+// sadly 😢😢this doesn't solve all the test cases for now.
+// for a slick approach.
+function repeatedString(s,n){
+   let residual = n-s.length, m=s.match(/\a/g), n=m.length;
+  if(n > s.length){
+   if(m === null) return 0;
+   let freq = residual/(s.length);
+   if(Number.isInteger(freq)) return ((freq*n)+n);
+   if(s[0]==='a' && !Number.isInteger(freq)) return ((Math.floor(freq)*n)+n+1);
+  }else{
+       return s.substring(0,n).match(/\a/g).length
+  }
+}
+
+// [1,1][2,2]
+//=> (1*1) + (2*2) = 5
+//✔️✔️✔️ passess all the test cases
+function dotProduct(){
+    if(x.length !== y.length || x.length ===0 || y.length === 0){
+        return 0;
+    }else{
+        for(var i=0,total=0; i<(x.length && y.length); i++){
+            total+= x[i]*y[i];
+        }
+        return total;
+    }
+}
+
+// gggggggggrrrrrrrrttttt
+// =>9g8r5t
+//✔️✔️✔️ passess all the test cases
+function runLengthEncode(input) {
+    let freq = {};
+     input.split('').forEach((char)=>{
+         if(char in freq){
+              freq[char] = freq[char] + 1;
+         }else{
+             freq[char] = 1;
+         }
+     })
+     let output = [];
+      for(key in freq){
+          output.push(`${freq[key]}${key}`);
+      }
+       return output.join('');
 }
